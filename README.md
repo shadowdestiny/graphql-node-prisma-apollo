@@ -8,6 +8,7 @@ These containers allow to display an instance of Prisma and Grahpql
 3. [ ] Execute in our console the following command ``docker-compose up``
 4. [ ] Execute in other console the following command ``docker-compose exec node bash``, then once inside, run the following command ``npm i``. This installs the dependencies
 5. [ ] Right there execute the following command ``prisma migrate dev --name init``, this builds a migration on our mysql database
+6. [ ] Right there execute the following command ``node app``
 
 # Deployment and local variables
 Environment variables in the docker scope
