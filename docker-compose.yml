@@ -1,0 +1,59 @@
+version: '3.4'
+
+services:
+  node:
+    build:
+      context: dockerdev/node
+      dockerfile: Dockerfile
+      target: base
+    image: node:14
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    ports:
+      - ${NODE_PORT}:3000
+    links:
+      - db
+    networks:
+      backend:
+        ipv4_address: ${GA_NODE_IP}
+    command: >
+       bash -c "sleep infinity"
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+
+  db:
+    image: mysql:5.7
+    restart: always
+    volumes:
+      - ./todo-mysql-data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASS}
+      - MYSQL_DATABASE=${DB_NAME}
+    ports:
+      - ${DB_PORT}:3306
+    command: [ "mysqld", "--bind-address=0.0.0.0",
+               "--character-set-server=utf8mb4",
+               "--collation-server=utf8mb4_unicode_ci",
+    ]
+    networks:
+      backend:
+        ipv4_address: ${GA_DB_HOST}
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASS}
+      MYSQL_ROOT_PASSWORD: ${DB_PASS}
+    ports:
+      - ${PHP_MYADMIN_PORT}:80
+    links:
+      # for mysql container
+      - db:db
+
+networks:
+  backend:
+    ipam:
+      config:
+        - subnet: ${GA_BACKEND_SUBNET}
