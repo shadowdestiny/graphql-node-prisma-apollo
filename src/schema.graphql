@@ -1,0 +1,37 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+}
+
+type Aeropuerto {
+    aviones: [Avion!]!
+    id: ID!
+    localizacion: String!
+    rutas: [Ruta!]
+}
+
+type Avion {
+    id: ID!
+    matricula: String!
+    pasajeros: [Pasajero!]!
+    velocidadHora: Int!
+}
+
+type Pasajero {
+    apellido: String!
+    id: ID!
+    nombre: String!
+}
+
+type Query {
+    listarAeropuertos: [Aeropuerto!]!
+}
+
+type Ruta {
+    fechaHoraSalida: DateTime!
+    id: ID!
+    kilometro: Int!
+}
+
+scalar DateTime

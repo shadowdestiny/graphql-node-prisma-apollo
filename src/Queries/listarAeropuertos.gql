@@ -1,0 +1,6 @@
+{
+    listarAeropuertos {
+        id
+        localizacion
+    }
+}
