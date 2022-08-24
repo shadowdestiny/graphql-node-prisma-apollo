@@ -28,4 +28,6 @@ type Pasajero {
 
 type Query {
     listarAeropuertos: [Aeropuerto!]!
+    obtenerAeropuertoPorId(id: ID!): Aeropuerto
+    obtenerAeropuerto(id: ID, localizacion: String): Aeropuerto
 }

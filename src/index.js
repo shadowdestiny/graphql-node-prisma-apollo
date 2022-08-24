@@ -2,6 +2,13 @@ const {ApolloServer, gql} = require('apollo-server')
 const {loadTypedefsSync} = require('@graphql-tools/load')
 const {GraphQLFileLoader} = require('@graphql-tools/graphql-file-loader')
 const {join} = require("path");
+const fs = require('fs')
+
+const aeropuertos = JSON.parse(
+    fs.readFileSync(join(__dirname, './data/dataset.json'), 'utf8')
+)
+
+console.log(aeropuertos);
 
 const sources = loadTypedefsSync(join(__dirname, './types/typeDefs.gql'), {
     loaders: [
@@ -22,6 +29,26 @@ const resolvers = {
     Query: {
         listarAeropuertos: () => {
             return [{id: "hola", localizacion: "mundo", rutas: [], aviones: []}]
+        },
+        obtenerAeropuertoPorId:  (obj, args) => {
+            const response = aeropuertos.filter(aeropuerto => {
+                return aeropuerto.id === args.id
+            })
+            if (response.length === 0){
+                throw 'Aeropuerto no encontrados'
+            }
+            return response[0]
+        },
+        obtenerAeropuerto:  (obj, {id, localizacion}) => {
+            const response = aeropuertos.filter((aeropuerto) => {
+              if (aeropuerto.localizacion === localizacion || aeropuerto.id === id)  {
+                return aeropuerto
+              }
+            });
+            if (response.length === 0){
+                throw 'Aeropuerto no encontrados'
+            }
+            return response[0]
         }
     }
 }
@@ -38,6 +65,6 @@ const server = new ApolloServer({
     resolvers
 })
 
-server.listen().then(({url}) => {
+server.listen({ port: 4001 }).then(({url}) => {
     console.log(`servidor iniciado en ${url}`);
 });

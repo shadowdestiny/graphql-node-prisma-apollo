@@ -1,0 +1,5 @@
+{
+    obtenerAeropuertoPorId(id: "76085b24-089e-4c13-9907-3df393d761bf"){
+        localizacion
+    }
+}
