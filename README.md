@@ -31,3 +31,6 @@ Environment variables in the docker scope
 | GA_BACKEND_SUBNET | Subnet range                                 | ``120.2.1.0/16``         |
 | GA_DB_HOST        | Host IP inherited of the variable DB_HOST    | ``GA_DB_HOST=120.2.1.2`` |
 | GA_NODE_IP        | Host IP inherited of the variable GA_NODE_IP | ``GA_NODE_IP=120.2.1.3`` |
+
+Tool
+graphdoc -e http://localhost:4000/graphql -o ./doc/schema

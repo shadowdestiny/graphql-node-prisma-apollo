@@ -1,6 +1,8 @@
 scalar DateTime
 
+"""Esto representa un aeropuerto"""
 type Aeropuerto {
+    """Identificador de un aeropuerto"""
     id: ID!
     localizacion: String!
     rutas: [Ruta!]
@@ -27,8 +29,13 @@ type Pasajero {
 }
 
 type Query {
+    """Retornara la lista de aeropuertos"""
     listarAeropuertos: [Aeropuerto!]!
-    obtenerAeropuertoPorId(id: ID!): Aeropuerto
+    """Retornara el aeropuerto"""
+    obtenerAeropuertoPorId(
+        """Identificador de un aeropuerto"""
+        id: ID!
+    ): Aeropuerto
     obtenerAeropuerto(id: ID, localizacion: String): Aeropuerto
 }
 
