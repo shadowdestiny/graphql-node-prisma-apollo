@@ -29,7 +29,7 @@ console.log(`hola curso ${process.env.NODE_PORT}`);
 const resolvers = {
     Query: {
         listarAeropuertos: () => {
-            return [{id: "hola", localizacion: "mundo", rutas: [], aviones: []}]
+            return aeropuertos
         },
         obtenerAeropuertoPorId:  (obj, args) => {
             const response = aeropuertos.filter(aeropuerto => {
@@ -73,6 +73,26 @@ const resolvers = {
             }
 
             throw 'Avion no existe';
+        },
+        actualizarVelocidadHora: (obj, {idAvion, velocidadHora}) => {
+            console.log("hola")
+            let returnValue = null
+            console.log(idAvion)
+            aeropuertos.map(aeropuerto => {
+                aeropuerto.aviones = aeropuerto.aviones.map(avion => {
+                    if(avion.id === idAvion){
+                        console.log(avion.id, idAvion)
+                        avion.velocidadHora = velocidadHora
+                        returnValue = avion
+                    }
+                    return avion
+                })
+                return aeropuerto
+            })
+            if (returnValue){
+                return returnValue;
+            }
+            throw 'Avion no existente';
         }
     }
 }
