@@ -124,7 +124,9 @@ const resolvers = {
 
 const server = new ApolloServer({
     typeDefs,
-    resolvers
+    resolvers,
+    /*introspection: false,
+    playground: false,*/
 })
 
 server.listen({ port: 4001 }).then(({url}) => {

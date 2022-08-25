@@ -33,7 +33,7 @@ type Query {
 type Ruta {
     fechaHoraSalida: DateTime!
     id: ID!
-    kilometro: Int!
+    kilometros: Int!
 }
 
 scalar DateTime

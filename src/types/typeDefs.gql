@@ -10,7 +10,7 @@ type Aeropuerto {
 type Ruta {
     id: ID!
     fechaHoraSalida: DateTime!
-    kilometro: Int!
+    kilometros: Int!
 }
 
 type Avion {
