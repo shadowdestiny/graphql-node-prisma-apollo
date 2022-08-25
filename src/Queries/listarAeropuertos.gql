@@ -5,6 +5,10 @@
         aviones {
             id
             velocidadHora
+            pasajeros {
+                nombre
+                apellido
+            }
         }
     }
 }
