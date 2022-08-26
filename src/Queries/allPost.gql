@@ -1,0 +1,14 @@
+{
+    allPost {
+        id
+        title
+        user {
+            name
+            email
+            createAt
+            post {
+                id
+            }
+        }
+    }
+}

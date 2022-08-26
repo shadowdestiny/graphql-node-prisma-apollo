@@ -1,12 +1,12 @@
 version: '3.4'
 
 services:
-  node:
+  nodejs:
     build:
-      context: dockerdev/node
+      context: ./dockerdev/node
       dockerfile: Dockerfile
-      target: base
-    image: node:14
+      target: nodejs
+    image: ubuntu:xenial-20210804
     working_dir: /var/www
     volumes:
       - ./:/var/www

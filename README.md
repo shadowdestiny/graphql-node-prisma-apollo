@@ -34,3 +34,8 @@ Environment variables in the docker scope
 
 Tool
 graphdoc -e http://localhost:4000/graphql -o ./doc/schema
+
+[Prisma Migrate](https://www.youtube.com/watch?v=9l8iZP_HKY8)
+
+# migrate
+``prisma migrate dev --name init``

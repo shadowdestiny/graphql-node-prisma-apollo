@@ -4,12 +4,11 @@ const {GraphQLFileLoader} = require('@graphql-tools/graphql-file-loader')
 const {join} = require("path");
 const fs = require('fs')
 const {v4: uuidv4} = require('uuid')
+const {PrismaClient} = require('@prisma/client')
 
 const aeropuertos = JSON.parse(
     fs.readFileSync(join(__dirname, './data/dataset.json'), 'utf8')
 )
-
-console.log(aeropuertos);
 
 const sources = loadTypedefsSync(join(__dirname, './types/typeDefs.gql'), {
     loaders: [
@@ -18,8 +17,10 @@ const sources = loadTypedefsSync(join(__dirname, './types/typeDefs.gql'), {
 })
 
 const typeDefs = sources.map(source => source.document)
+const prisma = new PrismaClient();
 
-console.log(`hola curso ${process.env.NODE_PORT}`);
+
+console.log(`run server on ${process.env.NODE_PORT}`);
 
 /*const typeDefs = gql `
     type Query {
@@ -50,6 +51,24 @@ const resolvers = {
                 throw 'Aeropuerto no encontrados'
             }
             return response[0]
+        },
+        allUsers: () => {
+            return prisma.user.findMany({
+                include: {
+                    post: true,
+                }
+            })
+        },
+        allPost: () => {
+            return prisma.post.findMany({
+                include: {
+                    user: {
+                        include: {
+                            post: true
+                        }
+                    },
+                }
+            })
         }
     },
 

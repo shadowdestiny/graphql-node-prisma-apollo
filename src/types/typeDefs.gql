@@ -27,6 +27,20 @@ type Pasajero {
     nombre: String!
     apellido: String!
 }
+    """Connection DB"""
+type User {
+        email: String!
+        name: String
+        createAt: DateTime!
+        post: [Post]
+}
+
+type Post {
+    id: ID!
+    title: String!
+    content: String
+    user: User!
+}
 
 type Query {
     """Retornara la lista de aeropuertos"""
@@ -37,6 +51,8 @@ type Query {
         id: ID!
     ): Aeropuerto
     obtenerAeropuerto(id: ID, localizacion: String): Aeropuerto
+    allUsers: [User!]!
+    allPost: [Post!]!
 }
 
 type Mutation {
