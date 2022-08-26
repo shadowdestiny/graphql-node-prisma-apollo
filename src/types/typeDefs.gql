@@ -42,6 +42,11 @@ type Post {
     user: User!
 }
 
+input inputPost {
+    title: String!
+    content: String
+}
+
 type Query {
     """Retornara la lista de aeropuertos"""
     listarAeropuertos: [Aeropuerto!]!
@@ -59,4 +64,6 @@ type Mutation {
     crearPasajero(idAvion: ID!, nombre: String, apellido: String): Pasajero
     actualizarVelocidadHora(idAvion: ID!, velocidadHora: Int): Avion!
     vaciarPasajeros(idAvion: ID!): Avion!
+    addUser(name: String, email: String): User!
+    addPostUser(title: String, content: String, email: String): Post!
 }

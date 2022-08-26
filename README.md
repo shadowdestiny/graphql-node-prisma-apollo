@@ -37,5 +37,13 @@ graphdoc -e http://localhost:4000/graphql -o ./doc/schema
 
 [Prisma Migrate](https://www.youtube.com/watch?v=9l8iZP_HKY8)
 
-# migrate
+### Prisma Migrate
 ``prisma migrate dev --name init``
+
+### graphql limit
+[Graphl limit](https://mugan86.medium.com/tips-graphql-limitando-la-profundidad-de-las-consultas-1-cd12f3e0b1ba)
+
+### Prisma Migrate from typeorm
+[Migrate from typeorm](https://www.prisma.io/docs/guides/migrate-to-prisma/migrate-from-typeorm)
+
+###

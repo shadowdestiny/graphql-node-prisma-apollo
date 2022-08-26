@@ -19,14 +19,8 @@ const sources = loadTypedefsSync(join(__dirname, './types/typeDefs.gql'), {
 const typeDefs = sources.map(source => source.document)
 const prisma = new PrismaClient();
 
-
 console.log(`run server on ${process.env.NODE_PORT}`);
 
-/*const typeDefs = gql `
-    type Query {
-        hello: String
-    }
-`*/
 const resolvers = {
     Query: {
         listarAeropuertos: () => {
@@ -130,24 +124,49 @@ const resolvers = {
                 return returnValue;
             }
             throw 'Avion no existente';
-        }
+        },
+        addUser: (obj, {email, name, post}) => {
+            return prisma.user.create({
+                data: {
+                    email,
+                    name,
+                },
+                /*include: {
+                    posts: true
+                }*/
+            })
+        },
+        addPostUser: (obj, {title, content, email}) => {
+            return prisma.post.create({
+                data: {
+                    title,
+                    content,
+                    user: {
+                        connect: {email}
+                    }
+                },
+                include: {
+                    user: true
+                }
+            })
+        },
     }
 }
-/*const resolvers = {
-    Query: {
-        hello: () => {
-            return `hola curso ${process.env.NODE_PORT}`
-        }
-    }
-}*/
 
 const server = new ApolloServer({
     typeDefs,
     resolvers,
+    csrfPrevention: true,  // see below for more about this
+    cache: "bounded",
+    cors: {
+        origin: ["*", ]
+    },
     /*introspection: false,
     playground: false,*/
 })
 
-server.listen({ port: 4001 }).then(({url}) => {
+server.listen({
+    port: 4001,
+}).then(({url}) => {
     console.log(`servidor iniciado en ${url}`);
 });

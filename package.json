@@ -4,9 +4,10 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "dev": "env-cmd nodemon src/index.js",
-    "init": "env-cmd nodemon listener.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "env-cmd nodemon src/index.js --parallel",
+    "init": "env-cmd nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "prisma deploy"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,6 @@
+mutation {
+    addUser(name: "Fulano", email: "Fulano2@geoactio.com") {
+        email
+        name
+    }
+}

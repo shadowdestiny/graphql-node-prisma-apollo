@@ -1,0 +1,9 @@
+mutation {
+    addPostUser(title: "Titulo 7", content: "Contenido 7", email: "lrm.programador@gmail.com") {
+        title,
+        content,
+        user {
+            name
+        }
+    }
+}

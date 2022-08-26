@@ -3,13 +3,11 @@ FROM node:14-alpine as nodejs
 WORKDIR /usr/src/app
 
 RUN mkdir -p /app && chown node: /app
-#OPY package.* ./
 
 RUN npm install -g prisma \
-    &&  npm install @prisma/client \
-    && npm i --quiet
-
-#COPY . .
+    && npm install @prisma/client \
+    && npm i --quiet \
+    && npm install -g parallel
 
 RUN apk add --no-cache bash
 
