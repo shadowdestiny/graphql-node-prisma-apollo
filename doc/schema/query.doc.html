@@ -100,9 +100,19 @@
                 Pasajero
             </a>
         </li>
+        <li  title="Post">
+            <a href="post.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Post
+            </a>
+        </li>
         <li  title="Ruta">
             <a href="ruta.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 Ruta
+            </a>
+        </li>
+        <li  title="User">
+            <a href="user.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                User
             </a>
         </li>
         <li  title="__Directive">
@@ -133,6 +143,16 @@
         <li  title="__Type">
             <a href="type.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 __Type
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+    <h4 class="slds-text-title--caps slds-p-around--medium">Input Objects</h4>
+    <ul>
+        <li  title="inputPost">
+            <a href="inputpost.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                inputPost
             </a>
         </li>
     </ul>
@@ -188,7 +208,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">Query</span> {</li><li></li><li><span class="tab"><span class="comment line">#   Retornara la lista de aeropuertos</span></span></li><li><span class="tab"><span class="meta">listarAeropuertos</span>: [<a class="support type" href="aeropuerto.doc.html">Aeropuerto</a>!]! </span></li><li></li><li><span class="tab"><span class="comment line">#   Retornara el aeropuerto</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: Identificador de un aeropuerto</span></span></li><li><span class="tab"><span class="meta">obtenerAeropuertoPorId</span>(<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="aeropuerto.doc.html">Aeropuerto</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>localizacion</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">obtenerAeropuerto</span>(<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>, <span class="meta">localizacion</span>: <a class="support type" href="string.doc.html">String</a>): <a class="support type" href="aeropuerto.doc.html">Aeropuerto</a> </span></li><li>}</li></ul></code>
+        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">Query</span> {</li><li></li><li><span class="tab"><span class="comment line">#   Retornara la lista de aeropuertos</span></span></li><li><span class="tab"><span class="meta">listarAeropuertos</span>: [<a class="support type" href="aeropuerto.doc.html">Aeropuerto</a>!]! </span></li><li></li><li><span class="tab"><span class="comment line">#   Retornara el aeropuerto</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: Identificador de un aeropuerto</span></span></li><li><span class="tab"><span class="meta">obtenerAeropuertoPorId</span>(<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="aeropuerto.doc.html">Aeropuerto</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>localizacion</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">obtenerAeropuerto</span>(<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>, <span class="meta">localizacion</span>: <a class="support type" href="string.doc.html">String</a>): <a class="support type" href="aeropuerto.doc.html">Aeropuerto</a> </span></li><li></li><li><span class="tab"><span class="meta">allUsers</span>: [<a class="support type" href="user.doc.html">User</a>!]! </span></li><li></li><li><span class="tab"><span class="meta">allUsersPostgres</span>: [<a class="support type" href="user.doc.html">User</a>!]! </span></li><li></li><li><span class="tab"><span class="meta">allPost</span>: [<a class="support type" href="post.doc.html">Post</a>!]! </span></li><li>}</li></ul></code>
     </div>
 </section>
 <section>

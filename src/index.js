@@ -135,7 +135,7 @@ const resolvers = {
             }
             throw 'Avion no existente';
         },
-        addUser: (obj, {email, name, post}) => {
+        addUser: (obj, {email, name}) => {
             return prisma.user.create({
                 data: {
                     email,
@@ -160,6 +160,26 @@ const resolvers = {
                 }
             })
         },
+        updateUser: (obj, {name, email}) => {
+            return prisma.user.update({
+                where: {
+                    email,
+                },
+                data: {
+                    name,
+                },
+                include: {
+                    post: true
+                }
+            })
+        },
+        deletePost: (obj, {id}) => {
+           return prisma.post.delete({
+                where: {
+                    id
+                },
+            })
+        }
     }
 }
 

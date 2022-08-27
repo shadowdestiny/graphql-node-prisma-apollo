@@ -67,4 +67,7 @@ type Mutation {
     vaciarPasajeros(idAvion: ID!): Avion!
     addUser(name: String, email: String): User!
     addPostUser(title: String, content: String, email: String): Post!
+    updateUser(name: String, email: String): User!
+    """Este método sirve para eliminar un post de un usuario"""
+    deletePost(id: Int):Post
 }

@@ -9,6 +9,7 @@ These containers allow to display an instance of Prisma and Grahpql
 4. [ ] Execute in other console the following command ``docker-compose exec node bash``, then once inside, run the following command ``npm i``. This installs the dependencies
 5. [ ] Right there execute the following command ``prisma migrate dev --name init``, this builds a migration on our mysql database
 6. [ ] Right there execute the following command ``node app``
+7. [ ] Init project ``npm run dev``
 
 # Deployment and local variables
 Environment variables in the docker scope
@@ -32,8 +33,8 @@ Environment variables in the docker scope
 | GA_DB_HOST        | Host IP inherited of the variable DB_HOST    | ``GA_DB_HOST=120.2.1.2`` |
 | GA_NODE_IP        | Host IP inherited of the variable GA_NODE_IP | ``GA_NODE_IP=120.2.1.3`` |
 
-Tool
-graphdoc -e http://localhost:4000/graphql -o ./doc/schema
+### Tool
+``graphdoc -e http://localhost:4001/graphql -o ./doc/schema``
 
 [Prisma Migrate](https://www.youtube.com/watch?v=9l8iZP_HKY8)
 
@@ -56,5 +57,7 @@ graphdoc -e http://localhost:4000/graphql -o ./doc/schema
 
 ``prisma generate --schema=./prisma/postgres/schema1.prisma``
 
+### init project
+``npm run dev``
 
 ``prisma migrate deploy --schema=./prisma/postgres/schema1.prisma``

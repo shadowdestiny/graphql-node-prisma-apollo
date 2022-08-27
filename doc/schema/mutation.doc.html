@@ -100,9 +100,19 @@
                 Pasajero
             </a>
         </li>
+        <li  title="Post">
+            <a href="post.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Post
+            </a>
+        </li>
         <li  title="Ruta">
             <a href="ruta.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 Ruta
+            </a>
+        </li>
+        <li  title="User">
+            <a href="user.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                User
             </a>
         </li>
         <li  title="__Directive">
@@ -133,6 +143,16 @@
         <li  title="__Type">
             <a href="type.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 __Type
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+    <h4 class="slds-text-title--caps slds-p-around--medium">Input Objects</h4>
+    <ul>
+        <li  title="inputPost">
+            <a href="inputpost.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                inputPost
             </a>
         </li>
     </ul>
@@ -188,7 +208,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">Mutation</span> {</li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>idAvion</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>nombre</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>apellido</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">crearPasajero</span>(<span class="meta">idAvion</span>: <a class="support type" href="id.doc.html">ID</a>!, <span class="meta">nombre</span>: <a class="support type" href="string.doc.html">String</a>, <span class="meta">apellido</span>: <a class="support type" href="string.doc.html">String</a>): <a class="support type" href="pasajero.doc.html">Pasajero</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>idAvion</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>velocidadHora</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">actualizarVelocidadHora</span>(<span class="meta">idAvion</span>: <a class="support type" href="id.doc.html">ID</a>!, <span class="meta">velocidadHora</span>: <a class="support type" href="int.doc.html">Int</a>): <a class="support type" href="avion.doc.html">Avion</a>! </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>idAvion</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">vaciarPasajeros</span>(<span class="meta">idAvion</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="avion.doc.html">Avion</a>! </span></li><li>}</li></ul></code>
+        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">Mutation</span> {</li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>idAvion</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>nombre</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>apellido</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">crearPasajero</span>(<span class="meta">idAvion</span>: <a class="support type" href="id.doc.html">ID</a>!, <span class="meta">nombre</span>: <a class="support type" href="string.doc.html">String</a>, <span class="meta">apellido</span>: <a class="support type" href="string.doc.html">String</a>): <a class="support type" href="pasajero.doc.html">Pasajero</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>idAvion</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>velocidadHora</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">actualizarVelocidadHora</span>(<span class="meta">idAvion</span>: <a class="support type" href="id.doc.html">ID</a>!, <span class="meta">velocidadHora</span>: <a class="support type" href="int.doc.html">Int</a>): <a class="support type" href="avion.doc.html">Avion</a>! </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>idAvion</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">vaciarPasajeros</span>(<span class="meta">idAvion</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="avion.doc.html">Avion</a>! </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>name</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>email</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">addUser</span>(<span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>, <span class="meta">email</span>: <a class="support type" href="string.doc.html">String</a>): <a class="support type" href="user.doc.html">User</a>! </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>title</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>content</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>email</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">addPostUser</span>(<span class="meta">title</span>: <a class="support type" href="string.doc.html">String</a>, <span class="meta">content</span>: <a class="support type" href="string.doc.html">String</a>, <span class="meta">email</span>: <a class="support type" href="string.doc.html">String</a>): <a class="support type" href="post.doc.html">Post</a>! </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>name</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>email</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateUser</span>(<span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>, <span class="meta">email</span>: <a class="support type" href="string.doc.html">String</a>): <a class="support type" href="user.doc.html">User</a>! </span></li><li></li><li><span class="tab"><span class="comment line">#   Este método sirve para eliminar un post de un usuario</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">deletePost</span>(<span class="meta">id</span>: <a class="support type" href="int.doc.html">Int</a>): <a class="support type" href="post.doc.html">Post</a> </span></li><li>}</li></ul></code>
     </div>
 </section>
 <section>

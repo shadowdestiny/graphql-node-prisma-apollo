@@ -7,7 +7,8 @@ RUN mkdir -p /app && chown node: /app
 RUN npm install -g prisma \
     && npm install @prisma/client \
     && npm i --quiet \
-    && npm install -g parallel
+    && npm install -g parallel \
+    && npm install -g @2fd/graphdoc
 
 RUN apk add --no-cache bash
 

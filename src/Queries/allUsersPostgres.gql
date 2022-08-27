@@ -1,5 +1,5 @@
 {
-    allUsers {
+    allUsersPostgres {
         name
         email
         post {
