@@ -39,6 +39,8 @@ graphdoc -e http://localhost:4000/graphql -o ./doc/schema
 
 ### Prisma Migrate
 ``prisma migrate dev --name init``
+``prisma migrate dev --schema=./prisma/mysl/schema1.prisma``
+``prisma migrate dev --schema=./prisma/postgres/schema1.prisma``
 
 ### graphql limit
 [Graphl limit](https://mugan86.medium.com/tips-graphql-limitando-la-profundidad-de-las-consultas-1-cd12f3e0b1ba)
@@ -46,4 +48,12 @@ graphdoc -e http://localhost:4000/graphql -o ./doc/schema
 ### Prisma Migrate from typeorm
 [Migrate from typeorm](https://www.prisma.io/docs/guides/migrate-to-prisma/migrate-from-typeorm)
 
-###
+### Create different scheme
+[Different schema](https://github.com/prisma/prisma/issues/2443#issuecomment-630679118)
+``prisma generate --schema=./prisma/mysql/schema.prisma
+``
+``prisma generate --schema=./prisma/postgres/schema1.prisma
+``
+
+``prisma migrate deploy --schema=./prisma/postgres/schema1.prisma
+``

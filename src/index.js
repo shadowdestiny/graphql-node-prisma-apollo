@@ -4,7 +4,9 @@ const {GraphQLFileLoader} = require('@graphql-tools/graphql-file-loader')
 const {join} = require("path");
 const fs = require('fs')
 const {v4: uuidv4} = require('uuid')
-const {PrismaClient} = require('@prisma/client')
+
+const {PrismaClient} = require('../prisma/mysql/generated/client')
+const {PrismaClient: PrismaClient2} = require('../prisma/postgres/generated/client')
 
 const aeropuertos = JSON.parse(
     fs.readFileSync(join(__dirname, './data/dataset.json'), 'utf8')
@@ -18,6 +20,7 @@ const sources = loadTypedefsSync(join(__dirname, './types/typeDefs.gql'), {
 
 const typeDefs = sources.map(source => source.document)
 const prisma = new PrismaClient();
+const prisma2 = new PrismaClient2();
 
 console.log(`run server on ${process.env.NODE_PORT}`);
 
@@ -48,6 +51,13 @@ const resolvers = {
         },
         allUsers: () => {
             return prisma.user.findMany({
+                include: {
+                    post: true,
+                }
+            })
+        },
+        allUsersPostgres: () => {
+            return prisma2.user.findMany({
                 include: {
                     post: true,
                 }

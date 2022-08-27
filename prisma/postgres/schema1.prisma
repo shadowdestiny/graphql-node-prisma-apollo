@@ -3,12 +3,14 @@
 
 generator client {
   provider = "prisma-client-js"
+  output   = "./generated/client1"
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL2")
 }
+
 
 model Post {
     id Int @id @default(autoincrement())

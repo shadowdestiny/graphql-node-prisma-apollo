@@ -57,6 +57,7 @@ type Query {
     ): Aeropuerto
     obtenerAeropuerto(id: ID, localizacion: String): Aeropuerto
     allUsers: [User!]!
+    allUsersPostgres: [User!]!
     allPost: [Post!]!
 }
 
