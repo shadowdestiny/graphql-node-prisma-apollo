@@ -1,5 +1,5 @@
 const {PrismaClient} = require('../../prisma/mysql/generated/client')
-const {PrismaClient: PrismaClient2} = require('../../prisma/postgres/generated/client')
+const {PrismaClient: PrismaClient2} = require('../../prisma/postgres/generated/client1')
 
 const prisma = new PrismaClient();
 const prisma2 = new PrismaClient2();

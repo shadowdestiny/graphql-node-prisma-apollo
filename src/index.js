@@ -6,7 +6,7 @@ const fs = require('fs')
 const {v4: uuidv4} = require('uuid')
 
 const {PrismaClient} = require('../prisma/mysql/generated/client')
-const {PrismaClient: PrismaClient2} = require('../prisma/postgres/generated/client')
+const {PrismaClient: PrismaClient2} = require('../prisma/postgres/generated/client1')
 
 const aeropuertos = JSON.parse(
     fs.readFileSync(join(__dirname, './data/dataset.json'), 'utf8')

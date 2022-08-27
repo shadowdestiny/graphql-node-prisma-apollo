@@ -39,7 +39,9 @@ graphdoc -e http://localhost:4000/graphql -o ./doc/schema
 
 ### Prisma Migrate
 ``prisma migrate dev --name init``
-``prisma migrate dev --schema=./prisma/mysl/schema1.prisma``
+####
+``prisma migrate dev --schema=./prisma/mysql/schema.prisma``
+####
 ``prisma migrate dev --schema=./prisma/postgres/schema1.prisma``
 
 ### graphql limit
@@ -50,10 +52,9 @@ graphdoc -e http://localhost:4000/graphql -o ./doc/schema
 
 ### Create different scheme
 [Different schema](https://github.com/prisma/prisma/issues/2443#issuecomment-630679118)
-``prisma generate --schema=./prisma/mysql/schema.prisma
-``
-``prisma generate --schema=./prisma/postgres/schema1.prisma
-``
+``prisma generate --schema=./prisma/mysql/schema.prisma``
 
-``prisma migrate deploy --schema=./prisma/postgres/schema1.prisma
-``
+``prisma generate --schema=./prisma/postgres/schema1.prisma``
+
+
+``prisma migrate deploy --schema=./prisma/postgres/schema1.prisma``
