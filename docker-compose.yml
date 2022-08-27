@@ -6,7 +6,7 @@ services:
       context: ./dockerdev/node
       dockerfile: Dockerfile
       target: nodejs
-    image: ubuntu:xenial-20210804
+    image: node:14-alpine
     working_dir: /var/www
     volumes:
       - ./:/var/www
