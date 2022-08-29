@@ -15,15 +15,16 @@ These containers allow to display an instance of Prisma and Grahpql
 Environment variables in the docker scope
 
 
-| ENV Variable     | Content                                       | Example                   |
-|------------------|-----------------------------------------------|---------------------------|
-| NODE_PORT        | Node port for the host machine                | ``NODE_PORT=3001``        |
-| PHP_MYADMIN_PORT | PhpMyadmin console port for the host machine  | ``PHP_MYADMIN_PORT=8085`` |
-| DB_NAME          | DB name MYSQL                                 | ``DB_NAME=prisma``        |
-| DB_USER          | Database User                                 | ``DB_USER=prisma``        |
-| DB_PASS          | Database Password                             | ``DB_PASS=prisma``        |
-| DB_PORT          | Database Port                                 | ``DB_PORT=3240``          |
-| DB_NAME          | Database Name                                 | ``DB_NAME=prisma``        |
+| ENV Variable     | Content                                      | Example                   |
+|------------------|----------------------------------------------|---------------------------|
+| NODE_PORT        | Node port for the host machine               | ``NODE_PORT=4001``        |
+| PHP_MYADMIN_PORT | PhpMyadmin console port for the host machine | ``PHP_MYADMIN_PORT=8085`` |
+| DB_NAME          | DB name MYSQL - Postgres                     | ``DB_NAME=prisma``        |
+| DB_USER          | Database User Mysql(root) - Postgres         | ``DB_USER=prisma``        |
+| DB_PASS          | Database Password Mysql - Postgres           | ``DB_PASS=prisma``        |
+| DB_PORT          | Database Port Mysql                          | ``DB_PORT=3240``          |
+| DB_PORT          | Database Port Postgres                       | ``DB_PORT_PG=5480``       |
+| DB_NAME          | Database Name                                | ``DB_NAME=prisma``        |
 
 
 # Environment subnet
