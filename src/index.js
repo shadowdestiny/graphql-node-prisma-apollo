@@ -189,7 +189,8 @@ const server = new ApolloServer({
     csrfPrevention: true,  // see below for more about this
     cache: "bounded",
     cors: {
-        origin: ["*", ]
+        origin: "*",
+        credentials: true
     },
     /*introspection: false,
     playground: false,*/

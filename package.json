@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "dev": "env-cmd nodemon src/index.js --parallel",
+    "dev": "env-cmd  nodemon --watch server src/index.js --parallel",
     "init": "env-cmd nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "prisma deploy"
