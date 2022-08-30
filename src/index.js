@@ -73,6 +73,16 @@ const resolvers = {
                     },
                 }
             })
+        },
+        allPostByUser: (obj, {userId}) => {
+            return prisma.post.findMany({
+                where: {
+                    authorId: userId
+                },
+                include: {
+                    user: true
+                }
+            })
         }
     },
 
@@ -160,6 +170,20 @@ const resolvers = {
                 }
             })
         },
+
+        addPostUserById: (obj, {title, content, userId}) => {
+            return prisma.post.create({
+                data: {
+                    title,
+                    content,
+                    authorId: userId
+                },
+                include: {
+                    user: true
+                }
+            })
+        },
+
         updateUser: (obj, {name, email}) => {
             return prisma.user.update({
                 where: {
@@ -170,6 +194,13 @@ const resolvers = {
                 },
                 include: {
                     post: true
+                }
+            })
+        },
+        deleteUser: (obj, {id,}) => {
+            return prisma.user.delete({
+                where: {
+                    id,
                 }
             })
         },

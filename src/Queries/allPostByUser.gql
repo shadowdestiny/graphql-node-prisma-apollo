@@ -1,0 +1,12 @@
+{
+    allPostByUser(userId: 2) {
+        id
+        title
+        user {
+            id
+            name
+            email
+            createAt
+        }
+    }
+}

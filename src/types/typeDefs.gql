@@ -29,6 +29,7 @@ type Pasajero {
 }
     """Connection DB"""
 type User {
+        id: ID!,
         email: String!
         name: String
         createAt: DateTime!
@@ -40,6 +41,7 @@ type Post {
     title: String!
     content: String
     user: User!
+    authorId: Int!
 }
 
 input inputPost {
@@ -59,6 +61,7 @@ type Query {
     allUsers: [User!]!
     allUsersPostgres: [User!]!
     allPost: [Post!]!
+    allPostByUser(userId: Int): [Post!]!
 }
 
 type Mutation {
@@ -67,7 +70,9 @@ type Mutation {
     vaciarPasajeros(idAvion: ID!): Avion!
     addUser(name: String, email: String): User!
     addPostUser(title: String, content: String, email: String): Post!
+    addPostUserById(title: String, content: String, userId: Int): Post!
     updateUser(name: String, email: String): User!
+    deleteUser(id: Int): User!
     """Este método sirve para eliminar un post de un usuario"""
     deletePost(id: Int):Post
 }
